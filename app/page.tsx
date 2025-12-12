@@ -42,28 +42,26 @@ export default function Home() {
           >
             <div className="max-w-xl">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-                Data Analytics · BI · Machine Learning
+                Data Analytics · Business Intelligence · Machine Learning
               </p>
               <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-                Hi, I&apos;m Sindhu — I turn messy data into clear stories.
+                Hi, I&apos;m Sindhu. I like turning messy data into clear stories.
               </h1>
               <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                I&apos;m a data analyst and aspiring data scientist who enjoys
-                finding patterns, asking &quot;why?&quot;, and turning numbers
-                into decisions people can actually use. I work end-to-end — from
-                cleaning and stitching data together, to building models, to
-                designing dashboards that non-technical teams feel comfortable
-                using.
+                I am a data analyst and future-facing data scientist who enjoys
+                finding patterns, asking why things happen, and turning numbers
+                into decisions that actually help people. I work end to end, from
+                cleaning and joining data, to building models, to creating dashboards
+                that non technical teams are comfortable using.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                Over the last few years I&apos;ve worked on churn, marketing
-                performance, forecasting, and operational analytics. What I care
-                about most is clarity, good communication, and making data
-                useful rather than just impressive.
+                Recently I have worked on churn, marketing performance, forecasting,
+                and operational analytics. I care a lot about clarity, honest
+                communication, and making data useful instead of just complicated.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-slate-400">
                 <span className="rounded-full border border-slate-700 px-3 py-1">
-                  New York City, NY · Open to relocation
+                  Binghamton, NY · Open to relocation
                 </span>
                 <a
                   href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
@@ -98,12 +96,12 @@ export default function Home() {
           <section id="skills" className="mb-14">
             <h2 className="mb-4 text-xl font-semibold">Skills</h2>
             <p className="mb-4 text-sm text-slate-300">
-              I like working across the whole data lifecycle — from raw files
-              and SQL queries to polished dashboards and models.
+              I enjoy working across the whole data lifecycle, from raw files and SQL
+              queries to polished dashboards and models that support real decisions.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <SkillCard
-                title="Programming & ML"
+                title="Programming and Machine Learning"
                 items={[
                   "Python",
                   "SQL",
@@ -115,7 +113,7 @@ export default function Home() {
                 ]}
               />
               <SkillCard
-                title="Data & BI"
+                title="Data and Business Intelligence"
                 items={[
                   "Snowflake",
                   "PostgreSQL",
@@ -124,13 +122,13 @@ export default function Home() {
                   "Tableau",
                   "Power BI",
                   "Looker",
-                  "Excel (Advanced)",
+                  "Excel (advanced)",
                 ]}
               />
               <SkillCard
-                title="Data Engineering & Cloud"
+                title="Data Engineering and Cloud"
                 items={[
-                  "ETL Pipelines",
+                  "ETL pipelines",
                   "dbt",
                   "Airflow",
                   "AWS (S3, EC2)",
@@ -141,11 +139,11 @@ export default function Home() {
               <SkillCard
                 title="How I Work"
                 items={[
-                  "KPI design & reporting",
+                  "KPI design and reporting",
                   "Exploratory analysis",
-                  "Experimentation / A/B testing",
-                  "Stakeholder storytelling",
-                  "Agile · JIRA",
+                  "Experimentation and A/B testing",
+                  "Explaining insights to stakeholders",
+                  "Agile and JIRA",
                 ]}
               />
             </div>
@@ -156,29 +154,29 @@ export default function Home() {
             <div className="mb-4 flex items-center justify-between gap-2">
               <h2 className="text-xl font-semibold">Projects</h2>
               <span className="text-xs text-slate-400">
-                A few things I&apos;ve built or explored
+                A few things I have built or explored
               </span>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               <ProjectCard
                 title="Financial Forecasting Model"
-                description="An end-to-end forecasting pipeline where I experimented with time-series models to understand how key financial variables move over time. The focus wasn’t just accuracy, but also explaining trends and scenarios to non-technical stakeholders."
-                tags={["Python", "Time Series", "Prophet / ARIMA", "Visualization"]}
+                description="An end to end forecasting pipeline where I used time series models to understand how key financial variables move over time. The goal was not only accuracy, but also simple explanations of trends and scenarios for people who are not deep into statistics."
+                tags={["Python", "Time series", "Prophet or ARIMA", "Visualization"]}
               />
               <ProjectCard
                 title="Marketing Insights Dashboard"
-                description="A set of dashboards that highlight campaign performance, conversion behavior, and key funnel metrics. The goal was to replace scattered spreadsheets with one place marketing teams could visit to see what’s working."
-                tags={["Tableau", "Power BI", "ETL", "KPI Design"]}
+                description="A set of dashboards that show campaign performance, customer behavior, and funnel metrics in one place. This replaced scattered spreadsheets and gave marketing teams a single source of truth for their KPIs."
+                tags={["Tableau", "Power BI", "ETL", "KPI design"]}
               />
               <ProjectCard
-                title="Churn Prediction & Segmentation"
-                description="A machine learning project built to flag users likely to churn and understand how different segments behave. It helped direct retention efforts toward the customers who needed attention the most."
+                title="Churn Prediction and Segmentation"
+                description="A machine learning project that highlights users who are likely to leave and shows how different customer groups behave. It helped focus retention work on the customers who needed the most attention."
                 tags={["Python", "scikit-learn", "XGBoost", "Segmentation"]}
               />
               <ProjectCard
                 title="University Data Insights"
-                description="Analytics around academic and enrollment data built to support academic planning. I worked on structuring data, defining useful metrics, and making reporting faster and more repeatable."
-                tags={["SQL", "Reporting", "Dashboards", "Education Data"]}
+                description="Analytics around academic and enrollment data to support planning and reporting. I worked on structuring the data, defining useful metrics, and making recurring reports faster and more reliable."
+                tags={["SQL", "Reporting", "Dashboards", "Education data"]}
               />
             </div>
           </section>
@@ -188,43 +186,43 @@ export default function Home() {
             <h2 className="mb-4 text-xl font-semibold">Experience</h2>
             <div className="space-y-4 border-l border-slate-800 pl-4">
               <ExperienceItem
-                role="Research Intern — Data Science"
+                role="Research Intern, Data Science"
                 company="Binghamton University"
                 period="2025"
                 bullets={[
-                  "Worked on research that combined analytics with real academic impact, focusing on understanding skill gaps and improving how course and program data is analyzed.",
-                  "Designed automated ways to process and explore data so the team spent less time on manual work and more time on interpretation.",
-                  "Helped turn complex datasets into visual stories that faculty and administrators could easily explore.",
+                  "Worked on research that used analytics to answer real academic questions, focusing on skill gaps and how course and program data is interpreted.",
+                  "Designed simple and repeatable ways to process and explore data so the team could spend less time on manual work and more time on understanding results.",
+                  "Helped turn complex datasets into visuals that faculty and administrators could use in conversations about curriculum and planning.",
                 ]}
               />
               <ExperienceItem
                 role="Data Analyst"
                 company="Ulytics Inc"
-                period="2024 – 2025"
+                period="2024 to 2025"
                 bullets={[
-                  "Helped teams understand their customers better by automating data workflows, building churn and performance analyses, and designing dashboards used in day-to-day decision making.",
-                  "Streamlined ETL processes so reporting went from slow and manual to fast and mostly automated, giving stakeholders quicker access to the metrics they cared about.",
-                  "Focused on turning loose business questions into clear, structured analytics that answered not just 'what happened' but also 'what should we do next?'.",
+                  "Helped teams understand customer and performance data by automating workflows, building churn and performance analytics, and designing dashboards that were part of daily decision making.",
+                  "Improved ETL processes so reporting moved from slow, manual work to a more automated and reliable flow, giving stakeholders faster access to the numbers they needed.",
+                  "Turned open ended business questions into structured analytics that answered what happened and what might be a sensible next step.",
                 ]}
               />
               <ExperienceItem
                 role="Data Analyst"
                 company="Cognizant Technology Solutions"
-                period="2022 – 2023"
+                period="2022 to 2023"
                 bullets={[
-                  "Supported enterprise clients by building reliable reporting layers and standardizing KPIs across teams so everyone was working from the same numbers.",
-                  "Optimized SQL and reporting logic to reduce confusion, duplicate work, and conflicting versions of the truth.",
-                  "Collaborated with non-technical stakeholders to make dashboards and reports feel approachable, not intimidating.",
+                  "Supported enterprise clients by building reporting layers and standardizing KPIs so different teams used the same definitions and trusted the data.",
+                  "Optimized SQL and reporting logic to reduce duplicate work and confusion about which numbers were correct.",
+                  "Worked with non technical stakeholders to make dashboards and reports feel approachable and easy to use.",
                 ]}
               />
               <ExperienceItem
-                role="Early Analytics & Reporting Work"
-                company="Academic & Internship Projects"
-                period="Earlier Experience"
+                role="Analytics and Reporting Projects"
+                company="Academic and Internship Work"
+                period="Earlier experience"
                 bullets={[
-                  "Got hands-on with the basics: cleaning noisy datasets, running exploratory analysis, and creating simple dashboards to answer concrete questions.",
-                  "Learned the importance of documentation, reproducibility, and communication, not just code or queries.",
-                  "Used this phase to build confidence with tools like Python, SQL, and BI platforms before taking on more complex projects.",
+                  "Got hands on with the basics, including cleaning noisy datasets, running exploratory analysis, and creating simple dashboards to answer specific questions.",
+                  "Learned the value of documentation, reproducible work, and clear explanations, not only writing code or queries.",
+                  "Used this phase to build confidence with tools like Python, SQL, and BI platforms before moving into more complex projects.",
                 ]}
               />
             </div>
@@ -232,12 +230,11 @@ export default function Home() {
 
           {/* CONTACT */}
           <section id="contact" className="mb-4">
-            <h2 className="mb-3 text-xl font-semibold">Get in Touch</h2>
+            <h2 className="mb-3 text-xl font-semibold">Get in touch</h2>
             <p className="text-sm text-slate-300">
-              I&apos;m always happy to talk about data roles, analytics projects,
-              or collaborations. If you&apos;re looking for someone who enjoys
-              both the technical side and the storytelling side of data, feel
-              free to reach out.
+              I am open to data roles, analytics projects, and collaborations. If you
+              are looking for someone who enjoys both the technical work and the
+              storytelling side of data, feel free to reach out.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
               <a
@@ -264,7 +261,7 @@ export default function Home() {
           {/* FOOTER */}
           <footer className="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-500">
             © {new Date().getFullYear()} Sri Sai Sindhu Penmetsa · Built with
-            Next.js &amp; Tailwind CSS.
+            Next.js and Tailwind CSS.
           </footer>
         </div>
       </div>
