@@ -9,6 +9,28 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 
+import {
+  SiPython,
+  SiPostgresql,
+  SiMysql,
+  SiSnowflake,
+  SiAmazon,
+  SiAmazons3,
+  SiTableau,
+  SiPowerbi,
+  SiMicrosoftexcel,
+  SiGoogleanalytics,
+  SiScikitlearn,
+  SiXgboost,
+  SiPandas,
+  SiNumpy,
+  SiDbt,
+  SiApacheairflow,
+  SiDocker,
+  SiGit,
+  SiR,
+} from "react-icons/si";
+
 /* -------------------- CONFIG -------------------- */
 
 const SECTIONS = [
@@ -51,12 +73,70 @@ const EDUCATION = [
   },
 ];
 
+/**
+ * KEEPING your original SKILLS (no harm), but the UI below uses SKILL_GROUPS with icons.
+ * You can delete SKILLS later if you want.
+ */
 const SKILLS = [
   { group: "Programming", items: ["Python", "SQL", "R"] },
   { group: "Databases & Cloud", items: ["Snowflake", "PostgreSQL", "MySQL", "AWS"] },
   { group: "BI & Analytics", items: ["Power BI", "Tableau", "Excel (Advanced)", "Google Analytics"] },
   { group: "Machine Learning", items: ["scikit-learn", "XGBoost", "Pandas", "NumPy"] },
   { group: "Workflow & Tools", items: ["ETL Pipelines", "dbt", "Airflow", "Docker", "Git"] },
+];
+
+/** NEW: Icon-based skills like the reference site */
+const SKILL_GROUPS = [
+  {
+    title: "Programming",
+    subtitle: "Languages and query tools for analytics and automation",
+    items: [
+      { name: "Python", Icon: SiPython },
+      { name: "SQL", Icon: SiPostgresql }, // SQL feel
+      { name: "R", Icon: SiR },
+    ],
+  },
+  {
+    title: "Databases & Cloud",
+    subtitle: "Data stores and cloud platforms I’ve worked with",
+    items: [
+      { name: "Snowflake", Icon: SiSnowflake },
+      { name: "PostgreSQL", Icon: SiPostgresql },
+      { name: "MySQL", Icon: SiMysql },
+      { name: "AWS", Icon: SiAmazon },
+      { name: "S3", Icon: SiAmazons3 },
+    ],
+  },
+  {
+    title: "BI & Analytics",
+    subtitle: "Dashboards, reporting, and web analytics",
+    items: [
+      { name: "Power BI", Icon: SiPowerbi },
+      { name: "Tableau", Icon: SiTableau },
+      { name: "Excel", Icon: SiMicrosoftexcel },
+      { name: "Google Analytics", Icon: SiGoogleanalytics },
+    ],
+  },
+  {
+    title: "Machine Learning",
+    subtitle: "Modeling and data-science libraries",
+    items: [
+      { name: "scikit-learn", Icon: SiScikitlearn },
+      { name: "XGBoost", Icon: SiXgboost },
+      { name: "pandas", Icon: SiPandas },
+      { name: "NumPy", Icon: SiNumpy },
+    ],
+  },
+  {
+    title: "Workflow & Tools",
+    subtitle: "Pipelines, orchestration, and reproducible development",
+    items: [
+      { name: "dbt", Icon: SiDbt },
+      { name: "Airflow", Icon: SiApacheairflow },
+      { name: "Docker", Icon: SiDocker },
+      { name: "Git", Icon: SiGit },
+    ],
+  },
 ];
 
 const EXPERIENCE = [
@@ -66,7 +146,8 @@ const EXPERIENCE = [
     company: "Binghamton University",
     location: "Binghamton, NY",
     badge: "Curriculum & analytics research",
-    impact: "Improved data reliability and enabled curriculum insights for academic planning.",
+    impact:
+      "Improved data reliability and enabled curriculum insights for academic planning.",
     bullets: [
       "Designed Python and SQL based ETL workflows to process academic and program datasets, reducing manual analysis effort by about 30 percent.",
       "Performed TF-IDF and KMeans based skill-gap analysis across 200+ courses to identify curriculum improvement opportunities.",
@@ -81,7 +162,8 @@ const EXPERIENCE = [
     company: "Ulytics Inc",
     location: "USA",
     badge: "Automation & churn analytics",
-    impact: "Faster reporting and improved customer targeting through ML-driven insights.",
+    impact:
+      "Faster reporting and improved customer targeting through ML-driven insights.",
     bullets: [
       "Automated ETL workflows using Python, SQL, and Snowflake, cutting manual reporting effort by about 40 percent.",
       "Built churn prediction models using XGBoost to identify at-risk customers and support targeted retention strategies.",
@@ -291,7 +373,7 @@ export default function Home() {
             <Card>
               <p className="text-base leading-relaxed text-slate-300">
                 My approach blends technical execution with communication. I care about making
-                insights actionable, not just “interesting,” and helping teams trust the numbers.
+                insights actionable, not just interesting, and helping teams trust the numbers.
               </p>
             </Card>
           </div>
@@ -330,28 +412,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SKILLS */}
+        {/* SKILLS (UPDATED WITH ICON TILES) */}
         <section id="skills" className="mt-20">
           <SectionTitle
             eyebrow="Technical toolkit"
             title="Skills"
-            subtitle="Tools I use for analysis, reporting, and building repeatable workflows."
+            subtitle="A visual view of the tools I use for analysis, reporting, and building repeatable workflows."
           />
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {SKILLS.map((s) => (
-              <Card key={s.group}>
-                <p className="text-lg font-semibold text-slate-100">{s.group}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {s.items.map((i) => (
-                    <span
-                      key={i}
-                      className="rounded-full border border-slate-700 bg-slate-950/30 px-3 py-1 text-sm text-slate-200"
-                    >
-                      {i}
-                    </span>
+
+          <div className="mt-10 space-y-10">
+            {SKILL_GROUPS.map((group) => (
+              <div key={group.title}>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold text-slate-100">{group.title}</h3>
+                  <p className="mt-1 text-base text-slate-300">{group.subtitle}</p>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {group.items.map((skill) => (
+                    <SkillTile key={skill.name} name={skill.name} Icon={skill.Icon} />
                   ))}
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </section>
@@ -567,6 +649,29 @@ function Card({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">
       {children}
+    </div>
+  );
+}
+
+function SkillTile({
+  name,
+  Icon,
+}: {
+  name: string;
+  Icon: React.ComponentType<{ className?: string }>;
+}) {
+  return (
+    <div className="group rounded-3xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-cyan-400/60 hover:bg-slate-900/70">
+      <div className="flex items-center gap-4">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-950/40 transition group-hover:border-cyan-400/60">
+          <Icon className="h-6 w-6 text-slate-200 transition group-hover:text-cyan-300" />
+        </div>
+
+        <div>
+          <p className="text-lg font-semibold text-slate-100">{name}</p>
+          <p className="text-sm text-slate-400">Hands-on</p>
+        </div>
+      </div>
     </div>
   );
 }
