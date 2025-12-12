@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import {
   FaGithub,
@@ -7,39 +8,25 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaGraduationCap,
+  FaPython,
+  FaDatabase,
+  FaAws,
+  FaSnowflake,
+  FaChartBar,
+  FaChartLine,
+  FaFileExcel,
+  FaCogs,
+  FaCode,
+  FaTable,
+  FaRobot,
+  FaDocker,
+  FaGitAlt,
+  FaStream,
 } from "react-icons/fa";
-
-import {
-  SiPython,
-  SiR,
-  SiPostgresql,
-  SiMysql,
-  SiSnowflake,
-  SiAmazonaws,
-  SiTableau,
-  SiPowerbi,
-  SiMicrosoftexcel,
-  SiGoogleanalytics,
-  SiPandas,
-  SiNumpy,
-  SiScikitlearn,
-  SiXgboost,
-  SiDocker,
-  SiGit,
-  SiApacheairflow,
-} from "react-icons/si";
 
 /* -------------------- CONFIG -------------------- */
 
-const SECTIONS = [
-  "home",
-  "about",
-  "education",
-  "skills",
-  "experience",
-  "projects",
-  "contact",
-] as const;
+const SECTIONS = ["home", "about", "education", "skills", "experience", "projects", "contact"];
 
 const STATS = [
   { value: "2+", label: "Years of Experience" },
@@ -71,55 +58,13 @@ const EDUCATION = [
   },
 ];
 
-type SkillItem = {
-  name: string;
-  icon: React.ComponentType<{ className?: string }>;
-};
-
-const SKILLS: { group: string; items: SkillItem[] }[] = [
-  {
-    group: "Programming",
-    items: [
-      { name: "Python", icon: SiPython },
-      { name: "SQL", icon: SiPostgresql },
-      { name: "R", icon: SiR },
-    ],
-  },
-  {
-    group: "Databases & Cloud",
-    items: [
-      { name: "Snowflake", icon: SiSnowflake },
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MySQL", icon: SiMysql },
-      { name: "AWS", icon: SiAmazonaws },
-    ],
-  },
-  {
-    group: "BI & Analytics",
-    items: [
-      { name: "Tableau", icon: SiTableau },
-      { name: "Power BI", icon: SiPowerbi },
-      { name: "Excel (Advanced)", icon: SiMicrosoftexcel },
-      { name: "Google Analytics", icon: SiGoogleanalytics },
-    ],
-  },
-  {
-    group: "Machine Learning",
-    items: [
-      { name: "Pandas", icon: SiPandas },
-      { name: "NumPy", icon: SiNumpy },
-      { name: "scikit-learn", icon: SiScikitlearn },
-      { name: "XGBoost", icon: SiXgboost },
-    ],
-  },
-  {
-    group: "Workflow & Tools",
-    items: [
-      { name: "Airflow", icon: SiApacheairflow },
-      { name: "Docker", icon: SiDocker },
-      { name: "Git", icon: SiGit },
-    ],
-  },
+const SKILL_CARDS: Array<{ title: string; icon: React.ReactNode; items: string[] }> = [
+  { title: "Programming", icon: <FaCode />, items: ["Python", "SQL", "R"] },
+  { title: "Databases", icon: <FaDatabase />, items: ["PostgreSQL", "MySQL", "Snowflake", "Data Modeling"] },
+  { title: "Cloud", icon: <FaAws />, items: ["AWS (Basics)", "Cloud Storage", "Data Warehousing"] },
+  { title: "BI & Analytics", icon: <FaChartBar />, items: ["Tableau", "Power BI", "KPI Reporting", "Dashboard Design"] },
+  { title: "Data Science / ML", icon: <FaRobot />, items: ["scikit-learn", "XGBoost", "Pandas", "NumPy"] },
+  { title: "Workflow & Tools", icon: <FaCogs />, items: ["ETL Pipelines", "Automation", "Git", "Docker", "Airflow/dbt (Exposure)"] },
 ];
 
 const EXPERIENCE = [
@@ -129,8 +74,7 @@ const EXPERIENCE = [
     company: "Binghamton University",
     location: "Binghamton, NY",
     badge: "Curriculum & analytics research",
-    impact:
-      "Improved data reliability and enabled curriculum insights for academic planning.",
+    impact: "Improved data reliability and enabled curriculum insights for academic planning.",
     bullets: [
       "Designed Python and SQL based ETL workflows to process academic and program datasets, reducing manual analysis effort by about 30 percent.",
       "Performed TF-IDF and KMeans based skill-gap analysis across 200+ courses to identify curriculum improvement opportunities.",
@@ -145,8 +89,7 @@ const EXPERIENCE = [
     company: "Ulytics Inc",
     location: "USA",
     badge: "Automation & churn analytics",
-    impact:
-      "Faster reporting and improved customer targeting through ML-driven insights.",
+    impact: "Faster reporting and improved customer targeting through ML-driven insights.",
     bullets: [
       "Automated ETL workflows using Python, SQL, and Snowflake, cutting manual reporting effort by about 40 percent.",
       "Built churn prediction models using XGBoost to identify at-risk customers and support targeted retention strategies.",
@@ -191,7 +134,7 @@ const PROJECTS = [
     title: "Marketing Insights Dashboard",
     subtitle: "CRM to Tableau reporting pipeline",
     desc:
-      "Built an end-to-end analytics pipeline from CRM exports to Tableau dashboards. Defined seven core KPIs to monitor campaign performance and customer behavior. Automated refresh so reporting cycles dropped from days to about one hour.",
+      "Built an end-to-end analytics pipeline from CRM exports to dashboards. Defined seven core KPIs to monitor campaign performance and customer behavior. Automated refresh so reporting cycles dropped from days to about one hour.",
     tags: ["Tableau", "SQL", "Python", "ETL", "KPI Reporting"],
     github: "https://github.com/SindhuVarmaa",
   },
@@ -199,15 +142,15 @@ const PROJECTS = [
     title: "Financial Forecasting Platform",
     subtitle: "Time-series forecasting for planning",
     desc:
-      "Developed forecasting pipelines using Prophet to generate currency and financial projections. Integrated results into Power BI for interactive scenario analysis, reducing manual Excel forecasting effort by about 75 percent.",
-    tags: ["Python", "Prophet", "Power BI", "Time Series"],
+      "Developed forecasting pipelines to generate projections and integrate results into dashboards for scenario analysis, reducing manual Excel forecasting effort by about 75 percent.",
+    tags: ["Python", "Time Series", "Power BI", "Visualization"],
     github: "https://github.com/SindhuVarmaa",
   },
   {
     title: "Customer Churn Prediction",
     subtitle: "ML-based retention insights",
     desc:
-      "Built churn prediction models using scikit-learn and XGBoost. Combined modeling with cohort and driver analysis to explain why customers churn and help teams focus retention efforts where they matter most.",
+      "Built churn prediction models and combined modeling with cohort + driver analysis to explain churn reasons and help teams focus retention efforts where they matter most.",
     tags: ["Python", "XGBoost", "scikit-learn", "Customer Analytics"],
     github: "https://github.com/SindhuVarmaa",
   },
@@ -220,7 +163,6 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_55%)]" />
 
-      {/* NAV */}
       <nav className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#home" className="text-xl font-bold">
@@ -249,10 +191,13 @@ export default function Home() {
       </nav>
 
       <div className="mx-auto max-w-6xl px-4 pb-20 pt-10">
-        {/* HERO */}
-        <section id="home" className="grid gap-10 md:grid-cols-2">
+        <section id="home" className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <h1 className="text-4xl font-extrabold sm:text-5xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
+              Hello, my name is
+            </p>
+
+            <h1 className="mt-3 text-4xl font-extrabold leading-tight sm:text-5xl">
               Sri Sai Sindhu Penmetsa
             </h1>
 
@@ -260,14 +205,7 @@ export default function Home() {
               I’m a{" "}
               <span className="font-semibold text-cyan-300">
                 <TypeAnimation
-                  sequence={[
-                    "Data Analyst",
-                    1200,
-                    "BI Developer",
-                    1200,
-                    "Aspiring Data Scientist",
-                    1200,
-                  ]}
+                  sequence={["Data Analyst", 1200, "BI Developer", 1200, "Aspiring Data Scientist", 1200]}
                   speed={55}
                   repeat={Infinity}
                 />
@@ -275,9 +213,8 @@ export default function Home() {
             </div>
 
             <p className="mt-5 text-base leading-relaxed text-slate-300">
-              I specialize in turning complex data into clear insights through
-              analytics, reporting, and practical machine learning. I focus on
-              clean metrics, clear storytelling, and dashboards teams trust.
+              I specialize in turning complex data into clear insights through analytics, reporting, and practical machine
+              learning. I focus on clean metrics, clear storytelling, and dashboards teams trust.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -325,10 +262,7 @@ export default function Home() {
 
             <div className="mt-6 grid grid-cols-3 gap-3">
               {STATS.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-xl border border-slate-800 bg-slate-950/30 p-3 text-center"
-                >
+                <div key={s.label} className="rounded-xl border border-slate-800 bg-slate-950/30 p-3 text-center">
                   <p className="text-2xl font-bold text-cyan-300">{s.value}</p>
                   <p className="mt-1 text-xs text-slate-400">{s.label}</p>
                 </div>
@@ -337,7 +271,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT */}
         <section id="about" className="mt-20">
           <SectionTitle
             eyebrow="Professional summary"
@@ -347,23 +280,19 @@ export default function Home() {
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Card>
               <p className="text-base leading-relaxed text-slate-300">
-                I work across the full data lifecycle: understanding the business
-                question, cleaning and shaping data, defining the right metrics,
-                and presenting results through dashboards and analysis.
+                I work across the full data lifecycle: understanding the business question, cleaning and shaping data,
+                defining the right metrics, and presenting results through dashboards and analysis.
               </p>
             </Card>
-
             <Card>
               <p className="text-base leading-relaxed text-slate-300">
-                My approach blends technical execution with communication. I care
-                about making insights actionable, not just “interesting,” and
-                helping teams trust the numbers.
+                My approach blends technical execution with communication. I care about making insights actionable, not
+                just “interesting,” and helping teams trust the numbers.
               </p>
             </Card>
           </div>
         </section>
 
-        {/* EDUCATION */}
         <section id="education" className="mt-20">
           <SectionTitle
             eyebrow="Academic foundation"
@@ -378,9 +307,7 @@ export default function Home() {
                     <FaGraduationCap />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-slate-100">
-                      {e.degree}
-                    </p>
+                    <p className="text-lg font-semibold text-slate-100">{e.degree}</p>
                     <p className="text-sm text-slate-300">{e.school}</p>
                     <p className="mt-1 text-sm text-slate-400">
                       {e.period} · {e.location}
@@ -398,43 +325,46 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SKILLS (VISUAL CARDS) */}
         <section id="skills" className="mt-20">
           <SectionTitle
             eyebrow="Technical toolkit"
             title="Skills"
-            subtitle="Technologies I use to analyze data, build dashboards, and automate workflows."
+            subtitle="A visual snapshot of my core tools and strengths."
           />
 
-          <div className="mt-10 space-y-10">
-            {SKILLS.map((group) => (
-              <div key={group.group}>
-                <h3 className="mb-4 text-lg font-semibold text-slate-200">
-                  {group.group}
-                </h3>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SKILL_CARDS.map((card) => (
+              <div
+                key={card.title}
+                className="group rounded-3xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-cyan-400/60 hover:bg-slate-900/70"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800 bg-slate-950/40 text-cyan-300 text-xl">
+                    {card.icon}
+                  </div>
+                  <p className="text-lg font-semibold text-slate-100">{card.title}</p>
+                </div>
 
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                  {group.items.map((skill) => {
-                    const Icon = skill.icon;
-                    return (
-                      <div
-                        key={skill.name}
-                        className="group flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]"
-                      >
-                        <Icon className="text-4xl text-cyan-300 transition group-hover:scale-110" />
-                        <p className="mt-3 text-sm font-medium text-slate-200">
-                          {skill.name}
-                        </p>
-                      </div>
-                    );
-                  })}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {card.items.map((i) => (
+                    <span
+                      key={i}
+                      className="rounded-full border border-slate-700 bg-slate-950/30 px-3 py-1 text-sm text-slate-200"
+                    >
+                      {i}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-5 h-px w-full bg-slate-800/70" />
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-slate-400">
+                  <MiniIconRow title={card.title} />
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* EXPERIENCE */}
         <section id="experience" className="mt-20">
           <SectionTitle
             eyebrow="Career journey"
@@ -447,8 +377,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-xl font-bold text-slate-100">
-                      {e.role}{" "}
-                      <span className="text-slate-300">· {e.company}</span>
+                      {e.role} <span className="text-slate-300">· {e.company}</span>
                     </p>
                     <p className="mt-1 text-sm text-slate-400">
                       {e.period} · {e.location}
@@ -483,7 +412,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PROJECTS */}
         <section id="projects" className="mt-20">
           <SectionTitle
             eyebrow="Featured work"
@@ -495,10 +423,7 @@ export default function Home() {
               <Card key={p.title}>
                 <p className="text-2xl font-bold text-slate-100">{p.title}</p>
                 <p className="mt-1 text-sm text-slate-300">{p.subtitle}</p>
-
-                <p className="mt-4 text-base leading-relaxed text-slate-300">
-                  {p.desc}
-                </p>
+                <p className="mt-4 text-base leading-relaxed text-slate-300">{p.desc}</p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
@@ -524,7 +449,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTACT */}
         <section id="contact" className="mt-20">
           <SectionTitle
             eyebrow="Let’s connect"
@@ -539,15 +463,13 @@ export default function Home() {
               </p>
 
               <p className="mt-3 text-base leading-relaxed text-slate-300">
-                I’m currently open to Data Analyst, BI, and entry level Data
-                Science roles. If you have an opportunity or want to collaborate
-                on a project, feel free to reach out. I reply quickly and I’m
-                happy to share more work samples.
+                I’m currently open to Data Analyst, BI, and entry level Data Science roles. If you have an opportunity or
+                want to collaborate on a project, feel free to reach out.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a
-                  href="mailto:sindhuvarmaa2001@gmail.com?subject=Opportunity%20for%20Sri%20Sai%20Sindhu%20Penmetsa"
+                  href="mailto:sindhuvarmaa2001@gmail.com?subject=Opportunity%20for%20Sindhu%20Penmetsa"
                   className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
                 >
                   <FaEnvelope />
@@ -587,10 +509,7 @@ export default function Home() {
 
                 <p className="flex items-center gap-3">
                   <FaEnvelope className="text-cyan-300" />
-                  <a
-                    href="mailto:sindhuvarmaa2001@gmail.com"
-                    className="hover:text-cyan-300"
-                  >
+                  <a href="mailto:sindhuvarmaa2001@gmail.com" className="hover:text-cyan-300">
                     sindhuvarmaa2001@gmail.com
                   </a>
                 </p>
@@ -599,16 +518,14 @@ export default function Home() {
               <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
                 <p className="text-sm font-semibold text-slate-200">Available for</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {["Data Analyst", "BI Developer", "Analytics", "Data Science"].map(
-                    (tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-slate-700 bg-slate-950/40 px-3 py-1 text-sm text-slate-200"
-                      >
-                        {tag}
-                      </span>
-                    )
-                  )}
+                  {["Data Analyst", "BI Developer", "Analytics", "Data Science"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-slate-700 bg-slate-950/40 px-3 py-1 text-sm text-slate-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </Card>
@@ -636,9 +553,7 @@ function SectionTitle({
 }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
-        {eyebrow}
-      </p>
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">{eyebrow}</p>
       <h2 className="mt-2 text-3xl font-bold text-slate-100">{title}</h2>
       <p className="mt-3 text-base text-slate-300">{subtitle}</p>
     </div>
@@ -646,9 +561,56 @@ function SectionTitle({
 }
 
 function Card({ children }: { children: React.ReactNode }) {
+  return <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">{children}</div>;
+}
+
+function MiniIconRow({ title }: { title: string }) {
+  if (title === "Programming") {
+    return (
+      <>
+        <FaPython className="text-lg" />
+        <FaCode className="text-lg" />
+        <FaStream className="text-lg" />
+      </>
+    );
+  }
+  if (title === "Databases") {
+    return (
+      <>
+        <FaDatabase className="text-lg" />
+        <FaTable className="text-lg" />
+        <FaSnowflake className="text-lg" />
+      </>
+    );
+  }
+  if (title === "Cloud") {
+    return (
+      <>
+        <FaAws className="text-lg" />
+      </>
+    );
+  }
+  if (title === "BI & Analytics") {
+    return (
+      <>
+        <FaChartBar className="text-lg" />
+        <FaChartLine className="text-lg" />
+        <FaFileExcel className="text-lg" />
+      </>
+    );
+  }
+  if (title === "Data Science / ML") {
+    return (
+      <>
+        <FaRobot className="text-lg" />
+      </>
+    );
+  }
   return (
-    <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">
-      {children}
-    </div>
+    <>
+      <FaGitAlt className="text-lg" />
+      <FaDocker className="text-lg" />
+      <FaCogs className="text-lg" />
+    </>
   );
 }
