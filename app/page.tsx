@@ -249,7 +249,7 @@ export default function Home() {
               <span className="text-xs text-slate-400">
                 Or connect with me on{" "}
                 <a
-                  href="https://www.linkedin.com/"
+                  href="www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
                   target="_blank"
                   rel="noreferrer"
                   className="text-cyan-300 underline-offset-2 hover:underline"
