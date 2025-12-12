@@ -63,10 +63,10 @@ export default function Home() {
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-slate-400">
                 <span className="rounded-full border border-slate-700 px-3 py-1">
-                  Binghamton, NY · Open to relocation
+                  New York City, NY · Open to relocation
                 </span>
                 <a
-                  href="www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
+                  href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full border border-slate-700 px-3 py-1 hover:border-cyan-400 hover:text-cyan-300"
@@ -249,7 +249,7 @@ export default function Home() {
               <span className="text-xs text-slate-400">
                 Or connect with me on{" "}
                 <a
-                  href="www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
+                  href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
                   target="_blank"
                   rel="noreferrer"
                   className="text-cyan-300 underline-offset-2 hover:underline"
