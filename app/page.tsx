@@ -61,7 +61,7 @@ export default function Home() {
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-slate-400">
                 <span className="rounded-full border border-slate-700 px-3 py-1">
-                  Binghamton, NY · Open to relocation
+                  New York · Open to relocation
                 </span>
                 <a
                   href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
@@ -84,11 +84,14 @@ export default function Home() {
 
             {/* avatar style initials */}
             <div className="flex justify-center sm:block">
-              <div className="relative h-32 w-32 rounded-3xl border border-cyan-400/40 bg-slate-900 shadow-[0_0_50px_rgba(8,47,73,0.7)]">
-                <div className="flex h-full w-full items-center justify-center text-3xl font-semibold tracking-tight">
-                  SP
-                </div>
-              </div>
+            <div className="flex justify-center sm:block">
+  <img
+    src="/sindhu-portfolio.jpg"
+    alt="Sindhu Profile Photo"
+    className="h-32 w-32 rounded-3xl object-cover border border-cyan-400/40 shadow-[0_0_50px_rgba(8,47,73,0.7)]"
+  />
+</div>
+
             </div>
           </section>
 
