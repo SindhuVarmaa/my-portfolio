@@ -82,8 +82,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* profile photo */}
-            <div className="flex justify-center sm:block">
+           {/* profile photo */}
+           <div className="flex justify-center sm:block">
               <img
                 src="/sindhu-portfolio.jpg"
                 alt="Sindhu profile photo"
