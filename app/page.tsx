@@ -53,22 +53,10 @@ const EDUCATION = [
 
 const SKILLS = [
   { group: "Programming", items: ["Python", "SQL", "R"] },
-  {
-    group: "Databases & Cloud",
-    items: ["Snowflake", "PostgreSQL", "MySQL", "AWS"],
-  },
-  {
-    group: "BI & Analytics",
-    items: ["Power BI", "Tableau", "Excel (Advanced)", "Google Analytics"],
-  },
-  {
-    group: "Machine Learning",
-    items: ["scikit-learn", "XGBoost", "Pandas", "NumPy"],
-  },
-  {
-    group: "Workflow & Tools",
-    items: ["ETL Pipelines", "dbt", "Airflow", "Docker", "Git"],
-  },
+  { group: "Databases & Cloud", items: ["Snowflake", "PostgreSQL", "MySQL", "AWS"] },
+  { group: "BI & Analytics", items: ["Power BI", "Tableau", "Excel (Advanced)", "Google Analytics"] },
+  { group: "Machine Learning", items: ["scikit-learn", "XGBoost", "Pandas", "NumPy"] },
+  { group: "Workflow & Tools", items: ["ETL Pipelines", "dbt", "Airflow", "Docker", "Git"] },
 ];
 
 const EXPERIENCE = [
@@ -78,8 +66,7 @@ const EXPERIENCE = [
     company: "Binghamton University",
     location: "Binghamton, NY",
     badge: "Curriculum & analytics research",
-    impact:
-      "Improved data reliability and enabled curriculum insights for academic planning.",
+    impact: "Improved data reliability and enabled curriculum insights for academic planning.",
     bullets: [
       "Designed Python and SQL based ETL workflows to process academic and program datasets, reducing manual analysis effort by about 30 percent.",
       "Performed TF-IDF and KMeans based skill-gap analysis across 200+ courses to identify curriculum improvement opportunities.",
@@ -94,8 +81,7 @@ const EXPERIENCE = [
     company: "Ulytics Inc",
     location: "USA",
     badge: "Automation & churn analytics",
-    impact:
-      "Faster reporting and improved customer targeting through ML-driven insights.",
+    impact: "Faster reporting and improved customer targeting through ML-driven insights.",
     bullets: [
       "Automated ETL workflows using Python, SQL, and Snowflake, cutting manual reporting effort by about 40 percent.",
       "Built churn prediction models using XGBoost to identify at-risk customers and support targeted retention strategies.",
@@ -110,8 +96,7 @@ const EXPERIENCE = [
     company: "Cognizant Technology Solutions",
     location: "Hyderabad, India",
     badge: "Enterprise reporting",
-    impact:
-      "Improved speed, accuracy, and consistency of cross-team reporting.",
+    impact: "Improved speed, accuracy, and consistency of cross-team reporting.",
     bullets: [
       "Automated cross-department reporting pipelines using SQL and Python, reducing preparation time by about 40 percent.",
       "Built Tableau dashboards tracking KPIs across multiple business units for leadership reviews.",
@@ -126,11 +111,10 @@ const EXPERIENCE = [
     company: "Cognizant Technology Solutions",
     location: "Hyderabad, India",
     badge: "Analytics foundations",
-    impact:
-      "Supported reporting delivery and data quality improvements.",
+    impact: "Supported reporting delivery and data quality improvements.",
     bullets: [
       "Assisted with data cleaning, exploratory analysis, and preparing datasets for dashboards.",
-      "Wrote SQL queries for ad-hoc analysis and recurring reports.",
+      "Wrote SQL queries for ad hoc analysis and recurring reports.",
       "Helped document metric definitions and reporting assumptions to maintain consistency.",
     ],
     stack: ["SQL", "Excel", "Reporting"],
@@ -142,7 +126,7 @@ const PROJECTS = [
     title: "Marketing Insights Dashboard",
     subtitle: "CRM to Tableau reporting pipeline",
     desc:
-      "Built an end-to-end analytics pipeline from CRM exports to Tableau dashboards. Defined seven core KPIs to monitor campaign performance and customer behavior. Automated data refresh so reporting cycles dropped from days to about one hour.",
+      "Built an end-to-end analytics pipeline from CRM exports to Tableau dashboards. Defined seven core KPIs to monitor campaign performance and customer behavior. Automated refresh so reporting cycles dropped from days to about one hour.",
     tags: ["Tableau", "SQL", "Python", "ETL", "KPI Reporting"],
     github: "https://github.com/SindhuVarmaa",
   },
@@ -158,7 +142,7 @@ const PROJECTS = [
     title: "Customer Churn Prediction",
     subtitle: "ML-based retention insights",
     desc:
-      "Built churn prediction models using scikit-learn and XGBoost. Combined modeling with cohort and feature analysis to explain why customers churn and help teams focus retention efforts where they matter most.",
+      "Built churn prediction models using scikit-learn and XGBoost. Combined modeling with cohort and driver analysis to explain why customers churn and help teams focus retention efforts where they matter most.",
     tags: ["Python", "XGBoost", "scikit-learn", "Customer Analytics"],
     github: "https://github.com/SindhuVarmaa",
   },
@@ -177,6 +161,7 @@ export default function Home() {
           <a href="#home" className="text-xl font-bold">
             Sri Sai Sindhu Penmetsa
           </a>
+
           <div className="hidden gap-6 text-xs sm:flex">
             {SECTIONS.map((id) => (
               <a
@@ -188,6 +173,13 @@ export default function Home() {
               </a>
             ))}
           </div>
+
+          <a
+            href="mailto:sindhuvarmaa2001@gmail.com"
+            className="rounded-full border border-cyan-400/70 px-4 py-2 text-xs font-medium hover:bg-cyan-500/10"
+          >
+            Contact
+          </a>
         </div>
       </nav>
 
@@ -198,57 +190,137 @@ export default function Home() {
             <h1 className="text-4xl font-extrabold sm:text-5xl">
               Sri Sai Sindhu Penmetsa
             </h1>
+
             <div className="mt-4 text-lg text-slate-300">
-              <TypeAnimation
-                sequence={[
-                  "Data Analyst",
-                  1200,
-                  "BI Developer",
-                  1200,
-                  "Aspiring Data Scientist",
-                  1200,
-                ]}
-                speed={55}
-                repeat={Infinity}
-              />
+              I’m a{" "}
+              <span className="font-semibold text-cyan-300">
+                <TypeAnimation
+                  sequence={[
+                    "Data Analyst",
+                    1200,
+                    "BI Developer",
+                    1200,
+                    "Aspiring Data Scientist",
+                    1200,
+                  ]}
+                  speed={55}
+                  repeat={Infinity}
+                />
+              </span>
             </div>
-            <p className="mt-5 text-base text-slate-300">
-              I specialize in turning complex data into clear insights through
-              analytics, reporting, and practical machine learning.
+
+            <p className="mt-5 text-base leading-relaxed text-slate-300">
+              I specialize in turning complex data into clear insights through analytics,
+              reporting, and practical machine learning. I focus on clean metrics, clear
+              storytelling, and dashboards teams trust.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
+              >
+                View Projects
+              </a>
+
+              <a
+                href="https://github.com/SindhuVarmaa"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-5 py-2 text-sm hover:border-cyan-400 hover:text-cyan-300"
+              >
+                <FaGithub /> GitHub
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-5 py-2 text-sm hover:border-cyan-400 hover:text-cyan-300"
+              >
+                <FaLinkedin /> LinkedIn
+              </a>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6 shadow-[0_0_60px_rgba(8,47,73,0.55)]">
             <div className="flex items-center gap-4">
-              <div className="h-16 w-16 rounded-2xl border border-cyan-400/40 bg-slate-950 flex items-center justify-center text-2xl font-bold">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/40 bg-slate-950 text-2xl font-bold">
                 SP
               </div>
               <div>
-                <p className="text-sm">New York, USA</p>
-                <p className="text-sm">sindhuvarmaa2001@gmail.com</p>
+                <p className="flex items-center gap-2 text-sm text-slate-300">
+                  <FaMapMarkerAlt /> New York, USA
+                </p>
+                <p className="mt-1 flex items-center gap-2 text-sm text-slate-300">
+                  <FaEnvelope /> sindhuvarmaa2001@gmail.com
+                </p>
               </div>
             </div>
+
             <div className="mt-6 grid grid-cols-3 gap-3">
               {STATS.map((s) => (
-                <div key={s.label} className="rounded-xl border border-slate-800 p-3 text-center">
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-slate-800 bg-slate-950/30 p-3 text-center"
+                >
                   <p className="text-2xl font-bold text-cyan-300">{s.value}</p>
-                  <p className="text-xs text-slate-400">{s.label}</p>
+                  <p className="mt-1 text-xs text-slate-400">{s.label}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* ABOUT */}
+        <section id="about" className="mt-20">
+          <SectionTitle
+            eyebrow="Professional summary"
+            title="About"
+            subtitle="I enjoy building analytics that are both accurate and easy to use."
+          />
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <Card>
+              <p className="text-base leading-relaxed text-slate-300">
+                I work across the full data lifecycle: understanding the business question,
+                cleaning and shaping data, defining the right metrics, and presenting results
+                through dashboards and analysis.
+              </p>
+            </Card>
+
+            <Card>
+              <p className="text-base leading-relaxed text-slate-300">
+                My approach blends technical execution with communication. I care about making
+                insights actionable, not just “interesting,” and helping teams trust the numbers.
+              </p>
+            </Card>
+          </div>
+        </section>
+
         {/* EDUCATION */}
         <section id="education" className="mt-20">
-          <SectionTitle title="Education" />
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <SectionTitle
+            eyebrow="Academic foundation"
+            title="Education"
+            subtitle="Programs and coursework that shaped my analytics and data science skills."
+          />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {EDUCATION.map((e) => (
               <Card key={e.degree}>
-                <p className="text-lg font-semibold">{e.degree}</p>
-                <p className="text-sm text-slate-300">{e.school}</p>
-                <p className="text-sm text-slate-400">{e.period}</p>
-                <ul className="mt-3 list-disc pl-5 text-base text-slate-300">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 text-cyan-300">
+                    <FaGraduationCap />
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-slate-100">{e.degree}</p>
+                    <p className="text-sm text-slate-300">{e.school}</p>
+                    <p className="mt-1 text-sm text-slate-400">
+                      {e.period} · {e.location}
+                    </p>
+                  </div>
+                </div>
+
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-base text-slate-300">
                   {e.highlights.map((h) => (
                     <li key={h}>{h}</li>
                   ))}
@@ -258,21 +330,75 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SKILLS */}
+        <section id="skills" className="mt-20">
+          <SectionTitle
+            eyebrow="Technical toolkit"
+            title="Skills"
+            subtitle="Tools I use for analysis, reporting, and building repeatable workflows."
+          />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {SKILLS.map((s) => (
+              <Card key={s.group}>
+                <p className="text-lg font-semibold text-slate-100">{s.group}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {s.items.map((i) => (
+                    <span
+                      key={i}
+                      className="rounded-full border border-slate-700 bg-slate-950/30 px-3 py-1 text-sm text-slate-200"
+                    >
+                      {i}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
         {/* EXPERIENCE */}
         <section id="experience" className="mt-20">
-          <SectionTitle title="Experience" />
-          <div className="mt-6 space-y-6">
+          <SectionTitle
+            eyebrow="Career journey"
+            title="Experience"
+            subtitle="Roles focused on reporting, automation, analytics, and machine learning."
+          />
+          <div className="mt-8 space-y-6">
             {EXPERIENCE.map((e) => (
-              <Card key={e.role}>
-                <p className="text-xl font-bold">
-                  {e.role} · <span className="text-slate-300">{e.company}</span>
-                </p>
-                <p className="text-sm text-slate-400">{e.period}</p>
-                <ul className="mt-4 list-disc pl-5 text-base text-slate-300">
+              <Card key={e.role + e.period}>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xl font-bold text-slate-100">
+                      {e.role} <span className="text-slate-300">· {e.company}</span>
+                    </p>
+                    <p className="mt-1 text-sm text-slate-400">
+                      {e.period} · {e.location}
+                    </p>
+                  </div>
+
+                  <span className="rounded-full border border-cyan-400/40 bg-slate-950/40 px-4 py-1 text-xs text-cyan-200">
+                    {e.badge}
+                  </span>
+                </div>
+
+                <p className="mt-4 text-sm text-slate-300">{e.impact}</p>
+
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-base text-slate-300">
                   {e.bullets.map((b) => (
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {e.stack.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-slate-700 bg-slate-950/30 px-3 py-1 text-xs text-slate-200"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </Card>
             ))}
           </div>
@@ -280,20 +406,39 @@ export default function Home() {
 
         {/* PROJECTS */}
         <section id="projects" className="mt-20">
-          <SectionTitle title="Projects" />
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <SectionTitle
+            eyebrow="Featured work"
+            title="Projects"
+            subtitle="Selected projects showing end-to-end analysis, modeling, and dashboarding."
+          />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {PROJECTS.map((p) => (
               <Card key={p.title}>
-                <p className="text-xl font-bold">{p.title}</p>
-                <p className="text-sm text-slate-300">{p.subtitle}</p>
-                <p className="mt-3 text-base text-slate-300">{p.desc}</p>
+                <p className="text-2xl font-bold text-slate-100">{p.title}</p>
+                <p className="mt-1 text-sm text-slate-300">{p.subtitle}</p>
+
+                <p className="mt-4 text-base leading-relaxed text-slate-300">
+                  {p.desc}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-slate-700 bg-slate-950/30 px-3 py-1 text-xs text-slate-200"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
                 <a
                   href={p.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 inline-block text-cyan-300"
+                  className="mt-5 inline-flex items-center gap-2 text-cyan-300 hover:underline"
                 >
-                  View on GitHub →
+                  <FaGithub /> View on GitHub
                 </a>
               </Card>
             ))}
@@ -302,15 +447,94 @@ export default function Home() {
 
         {/* CONTACT */}
         <section id="contact" className="mt-20">
-          <SectionTitle title="Contact" />
-          <p className="text-base text-slate-300">
-            Open to data analyst and data science opportunities.
-          </p>
-          <div className="mt-4 flex gap-4">
-            <a href="mailto:sindhuvarmaa2001@gmail.com"><FaEnvelope /></a>
-            <a href="https://github.com/SindhuVarmaa"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"><FaLinkedin /></a>
+          <SectionTitle
+            eyebrow="Let’s connect"
+            title="Contact"
+            subtitle="Reach out for roles, collaborations, or project discussions."
+          />
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <Card>
+              <p className="text-lg font-semibold text-slate-100">
+                Let’s talk data, dashboards, and impactful analytics.
+              </p>
+
+              <p className="mt-3 text-base leading-relaxed text-slate-300">
+                I’m currently open to Data Analyst, BI, and entry level Data Science roles.
+                If you have an opportunity or want to collaborate on a project, feel free to
+                reach out. I reply quickly and I’m happy to share more work samples.
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:sindhuvarmaa2001@gmail.com?subject=Opportunity%20for%20Sindhu%20Penmetsa"
+                  className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
+                >
+                  <FaEnvelope />
+                  Email Me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/sri-sai-sindhu-penmetsa-03b1511ab"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-300"
+                >
+                  <FaLinkedin />
+                  LinkedIn
+                </a>
+
+                <a
+                  href="https://github.com/SindhuVarmaa"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-300"
+                >
+                  <FaGithub />
+                  GitHub
+                </a>
+              </div>
+            </Card>
+
+            <Card>
+              <p className="text-lg font-semibold text-slate-100">Quick details</p>
+
+              <div className="mt-4 space-y-3 text-base text-slate-300">
+                <p className="flex items-center gap-3">
+                  <FaMapMarkerAlt className="text-cyan-300" />
+                  New York, USA (open to relocation)
+                </p>
+
+                <p className="flex items-center gap-3">
+                  <FaEnvelope className="text-cyan-300" />
+                  <a
+                    href="mailto:sindhuvarmaa2001@gmail.com"
+                    className="hover:text-cyan-300"
+                  >
+                    sindhuvarmaa2001@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+                <p className="text-sm font-semibold text-slate-200">Available for</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {["Data Analyst", "BI Developer", "Analytics", "Data Science"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-slate-700 bg-slate-950/40 px-3 py-1 text-sm text-slate-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Card>
           </div>
+
+          <footer className="mt-16 border-t border-slate-800 pt-6 text-sm text-slate-500">
+            © {new Date().getFullYear()} Sri Sai Sindhu Penmetsa
+          </footer>
         </section>
       </div>
     </main>
@@ -319,8 +543,24 @@ export default function Home() {
 
 /* -------------------- UI -------------------- */
 
-function SectionTitle({ title }: { title: string }) {
-  return <h2 className="text-3xl font-bold">{title}</h2>;
+function SectionTitle({
+  eyebrow,
+  title,
+  subtitle,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
+        {eyebrow}
+      </p>
+      <h2 className="mt-2 text-3xl font-bold text-slate-100">{title}</h2>
+      <p className="mt-3 text-base text-slate-300">{subtitle}</p>
+    </div>
+  );
 }
 
 function Card({ children }: { children: React.ReactNode }) {
