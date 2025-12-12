@@ -11,24 +11,22 @@ import {
 
 import {
   SiPython,
+  SiR,
   SiPostgresql,
   SiMysql,
   SiSnowflake,
-  SiAmazon,
-  SiAmazons3,
+  SiAmazonaws,
   SiTableau,
   SiPowerbi,
   SiMicrosoftexcel,
   SiGoogleanalytics,
-  SiScikitlearn,
-  SiXgboost,
   SiPandas,
   SiNumpy,
-  SiDbt,
-  SiApacheairflow,
+  SiScikitlearn,
+  SiXgboost,
   SiDocker,
   SiGit,
-  SiR,
+  SiApacheairflow,
 } from "react-icons/si";
 
 /* -------------------- CONFIG -------------------- */
@@ -41,7 +39,7 @@ const SECTIONS = [
   "experience",
   "projects",
   "contact",
-];
+] as const;
 
 const STATS = [
   { value: "2+", label: "Years of Experience" },
@@ -73,68 +71,53 @@ const EDUCATION = [
   },
 ];
 
-/**
- * KEEPING your original SKILLS (no harm), but the UI below uses SKILL_GROUPS with icons.
- * You can delete SKILLS later if you want.
- */
-const SKILLS = [
-  { group: "Programming", items: ["Python", "SQL", "R"] },
-  { group: "Databases & Cloud", items: ["Snowflake", "PostgreSQL", "MySQL", "AWS"] },
-  { group: "BI & Analytics", items: ["Power BI", "Tableau", "Excel (Advanced)", "Google Analytics"] },
-  { group: "Machine Learning", items: ["scikit-learn", "XGBoost", "Pandas", "NumPy"] },
-  { group: "Workflow & Tools", items: ["ETL Pipelines", "dbt", "Airflow", "Docker", "Git"] },
-];
+type SkillItem = {
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
 
-/** NEW: Icon-based skills like the reference site */
-const SKILL_GROUPS = [
+const SKILLS: { group: string; items: SkillItem[] }[] = [
   {
-    title: "Programming",
-    subtitle: "Languages and query tools for analytics and automation",
+    group: "Programming",
     items: [
-      { name: "Python", Icon: SiPython },
-      { name: "SQL", Icon: SiPostgresql }, // SQL feel
-      { name: "R", Icon: SiR },
+      { name: "Python", icon: SiPython },
+      { name: "SQL", icon: SiPostgresql },
+      { name: "R", icon: SiR },
     ],
   },
   {
-    title: "Databases & Cloud",
-    subtitle: "Data stores and cloud platforms I’ve worked with",
+    group: "Databases & Cloud",
     items: [
-      { name: "Snowflake", Icon: SiSnowflake },
-      { name: "PostgreSQL", Icon: SiPostgresql },
-      { name: "MySQL", Icon: SiMysql },
-      { name: "AWS", Icon: SiAmazon },
-      { name: "S3", Icon: SiAmazons3 },
+      { name: "Snowflake", icon: SiSnowflake },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
+      { name: "AWS", icon: SiAmazonaws },
     ],
   },
   {
-    title: "BI & Analytics",
-    subtitle: "Dashboards, reporting, and web analytics",
+    group: "BI & Analytics",
     items: [
-      { name: "Power BI", Icon: SiPowerbi },
-      { name: "Tableau", Icon: SiTableau },
-      { name: "Excel", Icon: SiMicrosoftexcel },
-      { name: "Google Analytics", Icon: SiGoogleanalytics },
+      { name: "Tableau", icon: SiTableau },
+      { name: "Power BI", icon: SiPowerbi },
+      { name: "Excel (Advanced)", icon: SiMicrosoftexcel },
+      { name: "Google Analytics", icon: SiGoogleanalytics },
     ],
   },
   {
-    title: "Machine Learning",
-    subtitle: "Modeling and data-science libraries",
+    group: "Machine Learning",
     items: [
-      { name: "scikit-learn", Icon: SiScikitlearn },
-      { name: "XGBoost", Icon: SiXgboost },
-      { name: "pandas", Icon: SiPandas },
-      { name: "NumPy", Icon: SiNumpy },
+      { name: "Pandas", icon: SiPandas },
+      { name: "NumPy", icon: SiNumpy },
+      { name: "scikit-learn", icon: SiScikitlearn },
+      { name: "XGBoost", icon: SiXgboost },
     ],
   },
   {
-    title: "Workflow & Tools",
-    subtitle: "Pipelines, orchestration, and reproducible development",
+    group: "Workflow & Tools",
     items: [
-      { name: "dbt", Icon: SiDbt },
-      { name: "Airflow", Icon: SiApacheairflow },
-      { name: "Docker", Icon: SiDocker },
-      { name: "Git", Icon: SiGit },
+      { name: "Airflow", icon: SiApacheairflow },
+      { name: "Docker", icon: SiDocker },
+      { name: "Git", icon: SiGit },
     ],
   },
 ];
@@ -292,9 +275,9 @@ export default function Home() {
             </div>
 
             <p className="mt-5 text-base leading-relaxed text-slate-300">
-              I specialize in turning complex data into clear insights through analytics,
-              reporting, and practical machine learning. I focus on clean metrics, clear
-              storytelling, and dashboards teams trust.
+              I specialize in turning complex data into clear insights through
+              analytics, reporting, and practical machine learning. I focus on
+              clean metrics, clear storytelling, and dashboards teams trust.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -364,16 +347,17 @@ export default function Home() {
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Card>
               <p className="text-base leading-relaxed text-slate-300">
-                I work across the full data lifecycle: understanding the business question,
-                cleaning and shaping data, defining the right metrics, and presenting results
-                through dashboards and analysis.
+                I work across the full data lifecycle: understanding the business
+                question, cleaning and shaping data, defining the right metrics,
+                and presenting results through dashboards and analysis.
               </p>
             </Card>
 
             <Card>
               <p className="text-base leading-relaxed text-slate-300">
-                My approach blends technical execution with communication. I care about making
-                insights actionable, not just interesting, and helping teams trust the numbers.
+                My approach blends technical execution with communication. I care
+                about making insights actionable, not just “interesting,” and
+                helping teams trust the numbers.
               </p>
             </Card>
           </div>
@@ -394,7 +378,9 @@ export default function Home() {
                     <FaGraduationCap />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-slate-100">{e.degree}</p>
+                    <p className="text-lg font-semibold text-slate-100">
+                      {e.degree}
+                    </p>
                     <p className="text-sm text-slate-300">{e.school}</p>
                     <p className="mt-1 text-sm text-slate-400">
                       {e.period} · {e.location}
@@ -412,26 +398,36 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SKILLS (UPDATED WITH ICON TILES) */}
+        {/* SKILLS (VISUAL CARDS) */}
         <section id="skills" className="mt-20">
           <SectionTitle
             eyebrow="Technical toolkit"
             title="Skills"
-            subtitle="A visual view of the tools I use for analysis, reporting, and building repeatable workflows."
+            subtitle="Technologies I use to analyze data, build dashboards, and automate workflows."
           />
 
           <div className="mt-10 space-y-10">
-            {SKILL_GROUPS.map((group) => (
-              <div key={group.title}>
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-slate-100">{group.title}</h3>
-                  <p className="mt-1 text-base text-slate-300">{group.subtitle}</p>
-                </div>
+            {SKILLS.map((group) => (
+              <div key={group.group}>
+                <h3 className="mb-4 text-lg font-semibold text-slate-200">
+                  {group.group}
+                </h3>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {group.items.map((skill) => (
-                    <SkillTile key={skill.name} name={skill.name} Icon={skill.Icon} />
-                  ))}
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+                  {group.items.map((skill) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div
+                        key={skill.name}
+                        className="group flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/40 p-5 transition hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]"
+                      >
+                        <Icon className="text-4xl text-cyan-300 transition group-hover:scale-110" />
+                        <p className="mt-3 text-sm font-medium text-slate-200">
+                          {skill.name}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -451,7 +447,8 @@ export default function Home() {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-xl font-bold text-slate-100">
-                      {e.role} <span className="text-slate-300">· {e.company}</span>
+                      {e.role}{" "}
+                      <span className="text-slate-300">· {e.company}</span>
                     </p>
                     <p className="mt-1 text-sm text-slate-400">
                       {e.period} · {e.location}
@@ -542,14 +539,15 @@ export default function Home() {
               </p>
 
               <p className="mt-3 text-base leading-relaxed text-slate-300">
-                I’m currently open to Data Analyst, BI, and entry level Data Science roles.
-                If you have an opportunity or want to collaborate on a project, feel free to
-                reach out. I reply quickly and I’m happy to share more work samples.
+                I’m currently open to Data Analyst, BI, and entry level Data
+                Science roles. If you have an opportunity or want to collaborate
+                on a project, feel free to reach out. I reply quickly and I’m
+                happy to share more work samples.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a
-                  href="mailto:sindhuvarmaa2001@gmail.com?subject=Opportunity%20for%20Sindhu%20Penmetsa"
+                  href="mailto:sindhuvarmaa2001@gmail.com?subject=Opportunity%20for%20Sri%20Sai%20Sindhu%20Penmetsa"
                   className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
                 >
                   <FaEnvelope />
@@ -601,14 +599,16 @@ export default function Home() {
               <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
                 <p className="text-sm font-semibold text-slate-200">Available for</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {["Data Analyst", "BI Developer", "Analytics", "Data Science"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-slate-700 bg-slate-950/40 px-3 py-1 text-sm text-slate-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {["Data Analyst", "BI Developer", "Analytics", "Data Science"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-slate-700 bg-slate-950/40 px-3 py-1 text-sm text-slate-200"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
             </Card>
@@ -649,29 +649,6 @@ function Card({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">
       {children}
-    </div>
-  );
-}
-
-function SkillTile({
-  name,
-  Icon,
-}: {
-  name: string;
-  Icon: React.ComponentType<{ className?: string }>;
-}) {
-  return (
-    <div className="group rounded-3xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-cyan-400/60 hover:bg-slate-900/70">
-      <div className="flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-950/40 transition group-hover:border-cyan-400/60">
-          <Icon className="h-6 w-6 text-slate-200 transition group-hover:text-cyan-300" />
-        </div>
-
-        <div>
-          <p className="text-lg font-semibold text-slate-100">{name}</p>
-          <p className="text-sm text-slate-400">Hands-on</p>
-        </div>
-      </div>
     </div>
   );
 }
