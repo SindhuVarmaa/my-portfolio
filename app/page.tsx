@@ -82,16 +82,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* avatar style initials */}
+            {/* profile photo */}
             <div className="flex justify-center sm:block">
-            <div className="flex justify-center sm:block">
-  <img
-    src="/sindhu-portfolio.jpg"
-    alt="Sindhu Profile Photo"
-    className="h-32 w-32 rounded-3xl object-cover border border-cyan-400/40 shadow-[0_0_50px_rgba(8,47,73,0.7)]"
-  />
-</div>
-
+              <img
+                src="/sindhu-portfolio.jpg"
+                alt="Sindhu profile photo"
+                className="h-32 w-32 rounded-full object-cover border border-cyan-400/40 shadow-[0_0_50px_rgba(8,47,73,0.7)]"
+              />
             </div>
           </section>
 
@@ -146,7 +143,8 @@ export default function Home() {
                   "Exploratory analysis",
                   "Experimentation and A/B testing",
                   "Explaining insights to stakeholders",
-                  "Agile and JIRA",
+                  "Agile",
+                  "JIRA",
                 ]}
               />
             </div>
