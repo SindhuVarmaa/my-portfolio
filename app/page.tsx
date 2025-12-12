@@ -209,7 +209,7 @@ export default function Home() {
               <ExperienceItem
                 role="Research Intern, Data Science"
                 company="Binghamton University"
-                period="Jan 2025 – May 2025"
+                period="July 2025 – Present"
                 bullets={[
                   "Worked with academic datasets to analyze outcomes and surface skill gaps that supported curriculum-related discussions.",
                   "Built repeatable data preparation workflows to reduce manual effort and keep analysis consistent across iterations.",
@@ -220,7 +220,7 @@ export default function Home() {
               <ExperienceItem
                 role="Data Analyst"
                 company="Ulytics Inc"
-                period="Aug 2024 – Dec 2024"
+                period="May 2024 – May 2024"
                 bullets={[
                   "Built and maintained dashboards used for tracking customer behavior, churn signals, and operational performance.",
                   "Automated reporting steps by improving ETL logic and reducing manual refresh work for recurring metrics.",
@@ -231,7 +231,7 @@ export default function Home() {
               <ExperienceItem
                 role="Data Analyst"
                 company="Cognizant Technology Solutions"
-                period="Jul 2022 – Dec 2023"
+                period="October 2022 – July 2023"
                 bullets={[
                   "Standardized KPI definitions across stakeholders to reduce mismatched reporting and improve trust in numbers.",
                   "Optimized SQL queries and reporting logic to improve performance and stability for recurring dashboards.",
@@ -242,7 +242,7 @@ export default function Home() {
               <ExperienceItem
                 role="Data Analyst Intern"
                 company="Cognizant Technology Solutions"
-                period="Jan 2022 – Jun 2022"
+                period="March 2022 – July 2022"
                 bullets={[
                   "Supported senior analysts with data cleaning, ad hoc analysis, and building initial dashboard views.",
                   "Wrote and improved SQL queries for reporting needs, helping reduce manual spreadsheet work.",
